@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import Bar from './component/Navabar';
 import './App.css';
+import SingleProduct from './component/prouductdetails';
+import CheckOut from './component/checkout';
+import Home from './component/home';
+import Address from './component/addres';
+import { ChakraProvider } from '@chakra-ui/react'
 
+import {BrowserRouter ,Routes,Route} from 'react-router-dom'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <>
+  <ChakraProvider>
+  <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Bar/>}>
+          <Route index element={<Home />} />
+          <Route path='/product/:id' element={<SingleProduct/>} />
+          <Route path='/checkout' element={<CheckOut/>} />
+          <Route path='/add' element={<Address />} />
+          {/* <Route path="blogs" element={<Blogs />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<NoPage />} /> */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
+    </ChakraProvider>
+
+  
+  </>
   );
 }
 
