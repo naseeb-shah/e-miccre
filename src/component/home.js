@@ -4,6 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Coro from "./carousel";
 import AllProducts from "./products";
+import {Box} from '@chakra-ui/react'
  export default function Home(){
 
 
@@ -12,10 +13,15 @@ import AllProducts from "./products";
         <>
 
 {<Coro />}
-<Container>
+<Container style={{marginTop:'100px'}}>
+  
       
       <Row>
+        
       {
+        
+        
+
  < AllProducts />
 }
       </Row>

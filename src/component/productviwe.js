@@ -21,7 +21,7 @@ function Overviwes({item}) {
   const Cart_=useSelector((state)=>state.Cart.value)
   console.log(Cart_)
   var [reco,setreco]=useState([])
-  var [current,sc]=useState(item.img[1])
+  var [current,sc]=useState(item.img[0])
   var [qun,squn]=useState(1)
 var redirect= useNavigate()
 useEffect(() => {
@@ -33,6 +33,9 @@ useEffect(() => {
   })
 
 },[]);
+useEffect(()=>{
+  sc(item.img[0])
+},[item.name])
 
   const Cartitem=(x,i)=>{
     return(<>
@@ -70,7 +73,7 @@ useEffect(() => {
 </Col>
 <Col sm={5} >
   <Box p='2%'>
-<Image h='250px' w='250px' mt='50px'   src={item.img[0]}  alt={item.name} />
+<Image h='250px' w='250px' mt='50px'   src={current}  alt={item.name} />
 <Box p='6' >
      <Box display='flex' alignItems='baseline'>
        <Badge borderRadius='full' px='2' colorScheme='yellow'>
@@ -171,7 +174,7 @@ useEffect(() => {
   </Text>
   </Flex>
   <Button 
-  onClick={()=>redirect('/add')}
+  onClick={()=>redirect('/checkout')}
   
   w='100%'colorScheme={'yellow'}  variant={'outline'}><ViewIcon ml='10px'mr='10px'></ViewIcon>CheckOut</Button>
   </Box>

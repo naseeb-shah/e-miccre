@@ -19,7 +19,7 @@ var redirecting= useNavigate()
     
     onClick={Goto}
     
-    w='300px' borderWidth='1px' borderRadius='lg' overflow='hidden' alignContent={'center'}>
+    w='275px' borderWidth='1px' borderRadius='lg' overflow='hidden' alignContent={'center'}>
       <Image h='250px' src={item.img[0]} alt={item.name} />
 
       <Box p='6'>

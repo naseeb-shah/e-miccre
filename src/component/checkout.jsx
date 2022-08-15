@@ -1,29 +1,14 @@
 
-import {additem,deleteitme} from '../app/cart'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteitme } from '../app/cart';
 
 
+import { DeleteIcon } from '@chakra-ui/icons';
 import {
-    Button,
-    Box,
-    Center,
-    Image,
-    Flex,
-    Text,
-    Heading,
-    HStack,
-    Input,
-    Link,
-    Divider,
-    VStack,
-    Radio,
-    RadioGroup,
-    Spacer,
-    Select,
-  } from "@chakra-ui/react";
-  import {DeleteIcon} from '@chakra-ui/icons'
-  import { StarIcon,ViewIcon } from '@chakra-ui/icons'
-  import { useState ,useEffect} from 'react'
+  Box, Button, Divider, Flex, Heading,
+  HStack, Image, Input, Spacer, Text
+} from "@chakra-ui/react";
+import Address from './addres';
 export default function CheckOut(){
  const cart= useSelector((state)=>state.Cart.value)
  console.log(cart)
@@ -157,7 +142,7 @@ export default function CheckOut(){
   </Box> 
  </Box>
             </Flex>    
-
+<Address/>
         </>
     )
 }
